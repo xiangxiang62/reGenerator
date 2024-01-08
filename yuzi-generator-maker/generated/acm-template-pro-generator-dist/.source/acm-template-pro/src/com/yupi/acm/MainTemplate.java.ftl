@@ -3,30 +3,36 @@ package com.yupi.acm;
 import java.util.Scanner;
 
 /**
- * ACM ÊäÈëÄ£°å£¨¶àÊıÖ®ºÍ£©
- * @author woshizuozhezhushi
+ * ACM è¾“å…¥æ¨¡æ¿ï¼ˆå¤šæ•°ä¹‹å’Œï¼‰
+ * @author ${author}
  */
 public class MainTemplate {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-            // ¶ÁÈ¡ÊäÈëÔªËØ¸öÊı
+<#if loop>
+        while (scanner.hasNext()) {
+</#if>
+            // è¯»å–è¾“å…¥å…ƒç´ ä¸ªæ•°
             int n = scanner.nextInt();
 
-            // ¶ÁÈ¡Êı×é
+            // è¯»å–æ•°ç»„
             int[] arr = new int[n];
             for (int i = 0; i < n; i++) {
                 arr[i] = scanner.nextInt();
             }
 
-            // ´¦ÀíÎÊÌâÂß¼­£¬¸ù¾İĞèÒª½øĞĞÊä³ö
-            // Ê¾Àı£º¼ÆËãÊı×éÔªËØµÄºÍ
+            // å¤„ç†é—®é¢˜é€»è¾‘ï¼Œæ ¹æ®éœ€è¦è¿›è¡Œè¾“å‡º
+            // ç¤ºä¾‹ï¼šè®¡ç®—æ•°ç»„å…ƒç´ çš„å’Œ
             int sum = 0;
             for (int num : arr) {
                 sum += num;
             }
 
-            System.out.println("woshishuchuxinxi" + sum);
+            System.out.println("${outputText}" + sum);
+<#if loop>
+        }
+</#if>
         scanner.close();
     }
 }
