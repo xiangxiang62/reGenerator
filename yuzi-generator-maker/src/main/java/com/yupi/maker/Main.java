@@ -1,7 +1,9 @@
 package com.yupi.maker;
 
 
-import com.yupi.maker.generator.file.MainGenerator;
+import com.yupi.maker.generator.main.MainGenerator;
+import com.yupi.maker.meta.Meta;
+import com.yupi.maker.meta.MetaManager;
 import freemarker.template.TemplateException;
 
 import java.io.IOException;

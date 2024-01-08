@@ -2,6 +2,7 @@ package com.yupi.model;
 
 import lombok.Data;
 
+
 /**
  * 数据模型
  */
@@ -9,17 +10,33 @@ import lombok.Data;
 public class DataModel {
 
     /**
+     * 是否生成 .gitignore 文件
+     */
+    public boolean needGit = true;
+
+    /**
      * 是否生成循环
      */
-    private boolean loop = false;
+    public boolean loop = false;
 
     /**
-     * 作者注释
+     * 核心模板
      */
-    private String author = "yupi";
+    public MainTemplate mainTemplate = new MainTemplate();
 
     /**
-     * 输出信息
+     * 用于生成核心模板文件
      */
-    private String outputText = "sum = ";
+    @Data
+    public static class MainTemplate {
+        /**
+         * 作者注释
+         */
+        public String author = "yupi";
+        /**
+         * 输出信息
+         */
+        public String outputText = "sum = ";
+    }
+
 }

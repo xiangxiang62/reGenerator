@@ -19,12 +19,23 @@ generator <命令> <选项参数>
 示例命令：
 
 ```
-generator generate -l -a -o 
+generator generate - -l -a -o 
 ```
 
 ## 参数说明
 
-1）loop
+1）needGit
+
+类型：boolean
+
+描述：是否生成 .gitignore 文件
+
+默认值：true
+
+缩写： -
+
+
+2）loop
 
 类型：boolean
 
@@ -35,7 +46,7 @@ generator generate -l -a -o
 缩写： -l
 
 
-2）author
+3）author
 
 类型：String
 
@@ -46,7 +57,7 @@ generator generate -l -a -o
 缩写： -a
 
 
-3）outputText
+4）outputText
 
 类型：String
 
