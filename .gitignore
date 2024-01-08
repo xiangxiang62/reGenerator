@@ -1,5 +1,6 @@
 # MyChoose
 .idea
+.temp
 target/
 *.iml
 

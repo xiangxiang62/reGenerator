@@ -1,0 +1,24 @@
+{
+    "name": "acm-template-generator",
+    "description": "ACM 示例模板生成器",
+    "fileConfig": {
+        "sourceRootPath": "D:/reyuzi/yuzi-generate/yuzi-generator-demo-projects/acm-template",
+        "files": [
+            {
+                "inputPath": "src/com/yupi/acm/MainTemplate.java",
+                "outputPath": "src/com/yupi/acm/MainTemplate.java.ftl",
+                "type": "file",
+                "generateType": "dynamic"
+            }
+        ]
+    },
+    "modelConfig": {
+        "models": [
+            {
+                "fieldName": "outputText",
+                "type": "String",
+                "defaultValue": "sum = "
+            }
+        ]
+    }
+}

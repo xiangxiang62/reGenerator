@@ -1,7 +1,7 @@
 package com.yupi.maker.generator.file;
 
 
-import com.yupi.maker.model.DataModel;
+
 import freemarker.template.TemplateException;
 
 import java.io.File;
@@ -30,16 +30,6 @@ public class MainGenerator {
         String outputDynamicFilePath = outputPath + File.separator + "acm-template/src/com/yupi/acm/Maintemplate.java";
 
         DynamicFileGenerator.doGenerate(inputDynamicFilePath,outputDynamicFilePath,model);
-    }
-
-
-
-    public static void main(String[] args) throws TemplateException, IOException {
-        DataModel mainTemplateConfig = new DataModel();
-        mainTemplateConfig.setOutputText("sum = ");
-        mainTemplateConfig.setLoop(true);
-        mainTemplateConfig.setAuthor("author_xiang");
-        doGenerate(mainTemplateConfig);
     }
 
 }
