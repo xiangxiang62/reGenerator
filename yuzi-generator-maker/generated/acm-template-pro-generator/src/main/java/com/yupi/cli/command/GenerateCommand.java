@@ -29,7 +29,7 @@ public class GenerateCommand implements Callable<Integer> {
     @Command(name = "mainTemplate")
     @Data
     public static class MainTemplateCommand implements Runnable {
-        @Option(names = {"-a", "--author"}, arity = "0..1", description = "作者注释", interactive = true, echo = true)
+        @Option(names = {"-PostController.java.ftl", "--author"}, arity = "0..1", description = "作者注释", interactive = true, echo = true)
         private String author = "yupi";
         @Option(names = {"-o", "--outputText"}, arity = "0..1", description = "输出信息", interactive = true, echo = true)
         private String outputText = "sum = ";
