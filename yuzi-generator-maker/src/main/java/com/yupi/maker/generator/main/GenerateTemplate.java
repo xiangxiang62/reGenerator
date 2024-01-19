@@ -3,6 +3,7 @@ package com.yupi.maker.generator.main;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.util.ZipUtil;
 import com.yupi.maker.generator.JarGenerator;
 import com.yupi.maker.generator.ScriptGenerator;
 import com.yupi.maker.generator.file.DynamicFileGenerator;
@@ -47,7 +48,7 @@ public abstract class GenerateTemplate {
  * @param sourceCopyDestPath
  * @param jarPath
  * @param shellOutputFilePath    */
-protected void buildDist(String outputPath, String sourceCopyDestPath, String jarPath, String shellOutputFilePath) {
+protected String buildDist(String outputPath, String sourceCopyDestPath, String jarPath, String shellOutputFilePath) {
     String distOutputPath = outputPath + "-dist";
     // 拷贝 jar 包
     String targetAbsolutePath = distOutputPath + File.separator + "target";
@@ -58,7 +59,22 @@ protected void buildDist(String outputPath, String sourceCopyDestPath, String ja
     FileUtil.copy(shellOutputFilePath, distOutputPath, true);
     // 拷贝源模板文件
     FileUtil.copy(sourceCopyDestPath, distOutputPath, true);
+    return distOutputPath;
 }
+
+    /**
+     * 生成 zip 压缩包
+     *
+     * @param outputPath
+     * @return
+     */
+    protected String buildZip(String outputPath){
+        String zipPath = outputPath +".zip";
+        ZipUtil.zip(outputPath,zipPath);
+        return zipPath;
+    }
+
+
 
     /**
      * 封装脚本
