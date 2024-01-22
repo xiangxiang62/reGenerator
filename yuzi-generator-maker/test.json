@@ -1,0 +1,8 @@
+{
+  "needGit": true,
+  "loop": true,
+  "mainTemplate": {
+    "author": "xiangxiang",
+    "outputText": "i want = you"
+  }
+}

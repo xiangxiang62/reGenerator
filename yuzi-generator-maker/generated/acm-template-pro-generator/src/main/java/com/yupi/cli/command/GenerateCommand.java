@@ -29,7 +29,7 @@ public class GenerateCommand implements Callable<Integer> {
     @Command(name = "mainTemplate")
     @Data
     public static class MainTemplateCommand implements Runnable {
-        @Option(names = {"-PostController.java.ftl", "--author"}, arity = "0..1", description = "作者注释", interactive = true, echo = true)
+        @Option(names = {"-a", "--author"}, arity = "0..1", description = "作者注释", interactive = true, echo = true)
         private String author = "yupi";
         @Option(names = {"-o", "--outputText"}, arity = "0..1", description = "输出信息", interactive = true, echo = true)
         private String outputText = "sum = ";
@@ -44,8 +44,8 @@ public class GenerateCommand implements Callable<Integer> {
     public Integer call() throws Exception {
         if (loop) {
             System.out.println("输入核心模板配置：");
-            CommandLine commandLine = new CommandLine(MainTemplateCommand.class);
-            commandLine.execute("--author", "--outputText");
+            CommandLine mainTemplateCommandLine = new CommandLine(MainTemplateCommand.class);
+            mainTemplateCommandLine.execute("--author", "--outputText");
         }
         DataModel dataModel = new DataModel();
         BeanUtil.copyProperties(this, dataModel);
