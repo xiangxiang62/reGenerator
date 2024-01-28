@@ -1,6 +1,9 @@
 import {PageContainer, ProFormText, QueryFilter} from "@ant-design/pro-components";
 import React, {useEffect, useState} from 'react';
-import {listGeneratorVoByPageUsingPost} from "@/services/backend/generatorController";
+import {
+  listGeneratorVoByPageFastUsingPost,
+  listGeneratorVoByPageUsingPost
+} from "@/services/backend/generatorController";
 import {Avatar, Card, Flex, Image, Input, List, message, Tabs, Tag, Typography} from "antd";
 import {ProFormSelect} from "@ant-design/pro-form/lib";
 import moment from "moment";
@@ -35,7 +38,8 @@ const IndexPage: React.FC = () => {
   const doSearch = async () => {
     setLoading(true);
     try {
-      const res = await listGeneratorVoByPageUsingPost(searchParms);
+      //  listGeneratorVoByPageFastUsingPost
+      const res = await listGeneratorVoByPageFastUsingPost(searchParms);
       // @ts-ignore
       setDataList(res.data?.records ?? []);
       setTotal(Number(res.data?.total) ?? 0)
