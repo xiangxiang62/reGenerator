@@ -6,7 +6,7 @@ import {
   ProFormTextArea,
   StepsForm,
 } from '@ant-design/pro-components';
-import {Card, message, UploadFile} from 'antd';
+import { message, UploadFile} from 'antd';
 import React, {useEffect, useRef, useState} from 'react';
 import {ProFormItem} from "@ant-design/pro-form";
 import PictureUploader from "@/components/PictureUploader";

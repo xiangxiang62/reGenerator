@@ -49,9 +49,8 @@ export default (props: Props) => {
       {(fields, {add, remove}) => {
         return (<div style={{display: 'flex', rowGap: 16, flexDirection: 'column'}}>
             {fields.map((field) => {
-              const modelConfig =
-                formRef?.current?.getFieldsValue()?.modelConfig ?? oldData?.modelConfig;
-              const groupKey = modelConfig.models?.[field.name]?.groupKey;
+              const modelConfig = formRef?.current?.getFieldsValue()?.modelConfig ?? oldData?.modelConfig;
+              const groupKey = modelConfig?.models?.[field.name]?.groupKey;
 
               return (
                 <Card
@@ -78,6 +77,9 @@ export default (props: Props) => {
                         <Input/>
                       </Form.Item>
                       <Form.Item label="条件" name={[field.name, 'condition']}>
+                        <Input/>
+                      </Form.Item>
+                      <Form.Item label="描述" name={[field.name, 'description']}>
                         <Input/>
                       </Form.Item>
                     </Space>

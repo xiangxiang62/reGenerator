@@ -3,6 +3,7 @@
 .temp
 target/
 *.iml
+application-prod.yml
 application-local.yml
 
 ### Java template

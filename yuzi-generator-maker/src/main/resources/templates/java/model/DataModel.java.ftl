@@ -8,7 +8,7 @@ ${indent}/**
 ${indent} * ${modelInfo.description}
 ${indent} */
 </#if>
-${indent}public ${modelInfo.type} ${modelInfo.fieldName}<#if modelInfo.defaultValue??> = ${modelInfo.defaultValue?c}</#if>;
+${indent}public ${modelInfo.type} ${modelInfo.fieldName}<#if modelInfo.defaultValue??> = ${modelInfo.defaultValue?c}</#i f>;
 </#macro>
 
 /**
